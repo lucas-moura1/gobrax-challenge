@@ -41,7 +41,7 @@ func main() {
 	http.HandleFunc("GET /drivers/{id}", driverHandler.GetById)
 	http.HandleFunc("POST /drivers", driverHandler.Create)
 	http.HandleFunc("POST /drivers/{id}/vehicle", driverHandler.AddVehicle)
-	http.HandleFunc("PUT /drivers/{id}", driverHandler.Update)
+	http.HandleFunc("PATCH /drivers/{id}", driverHandler.Update)
 	http.HandleFunc("DELETE /drivers/{id}", driverHandler.Delete)
 
 	vehicleRepository := repository.NewVehicleRepository(log, db)
@@ -52,7 +52,7 @@ func main() {
 
 	http.HandleFunc("GET /vehicles", vehicleHandler.GetAll)
 	http.HandleFunc("GET /vehicles/{id}", vehicleHandler.GetById)
-	http.HandleFunc("PUT /vehicles/{id}", vehicleHandler.Update)
+	http.HandleFunc("PATCH /vehicles/{id}", vehicleHandler.Update)
 	http.HandleFunc("DELETE /vehicles/{id}", vehicleHandler.Delete)
 
 	server := &http.Server{Addr: fmt.Sprintf(":%s", viper.GetString("PORT"))}
