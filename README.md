@@ -24,8 +24,9 @@ Este projeto é uma solução para o desafio gobrax, focado no cadastro e vincul
 - **Gestão de Motorista**:
 
     - Criação (`POST /drivers`)
-```json
+
 Ex:
+```json
 {
     "name": "John",
     "lastName": "Deo",
@@ -36,8 +37,9 @@ Ex:
 }
 ```
     - Adicionar veículo (`POST /drivers/{id}/vehicle`)
-```json
+
 Ex:
+```json
 {
 	"plate": "HIJ-1231",
 	"brand": "Ford",
